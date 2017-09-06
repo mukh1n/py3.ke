@@ -5,12 +5,12 @@ import actions.modifyAccount as modifyAccount
 def modifyAccountCall(action):
   api = ApiProxy('127.0.0.1', 49410)
   response = api.get(action.toString())
-  return modifyAccountResponce(response)
+  return modifyAccount.response(response)
 
 def createAccountCall(action):
   api = ApiProxy('127.0.0.1', 49410)
   response = api.get(action.toString())
-  return createAccount.responce(response)
+  return createAccount.response(response)
 
 action1 = createAccount.action(1234, 'yobaGroup', 200)
 result1 = createAccountCall(action1)

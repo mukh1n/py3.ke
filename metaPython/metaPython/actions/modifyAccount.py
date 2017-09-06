@@ -9,14 +9,14 @@ class action:
   
   @staticmethod
   def createDefault():
-    return modifyAccountAction('defaultLogin', 'defaultGroup', 200)
+    return action('defaultLogin', 'defaultGroup', 200)
     
   def toString(self):
     string = 'action={0}&login={1}&group={2}&leverage={3}'.format(self.commandName, self.login, self.group, self.leverage)
     return string
 
 
-class responce:
+class response:
   def __init__(self, responseString):
     dict = strToDict.getDict(responseString)
     self.result = dict.get("result")

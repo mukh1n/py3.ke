@@ -1,10 +1,12 @@
+import socket
+
 class ApiProxy:
   def __init__(self, host, port):
     self.host = host
     self.port = port
     
   def get(self, command):
-    return 'login=351092&request_id=1&result=1&size=34'
+    #return 'login=351092&request_id=1&result=1&size=34'
     mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     mySocket.connect((self.host, self.port))
     num = mySocket.send(command)
