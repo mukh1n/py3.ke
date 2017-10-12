@@ -48,8 +48,14 @@
     <Compile Include="MetaSockets\ApiV2.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MetaSockets\govno.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetaSockets\sooqa.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MetaSockets\TestCreateAccount.py" />
-    <Compile Include="MetaSockets\Common.py">
+    <Compile Include="MetaSockets\ApiProxy.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="requestBin.py">

@@ -1,12 +1,11 @@
-from Common import FakeApiProxy
-import ApiV1
-import ApiV2
+from ApiV1 import *
+from ApiProxy import *
 import unittest
 
 class TestCreateAccount(unittest.TestCase):
   def setUp(self):
     apiProxy = FakeApiProxy()
-    self.api = ApiV1.Api(apiProxy)
+    self.api = Api(apiProxy)
 
   def test_is_success(self):
     result = self.api.createAccount('yoba', 'yobagroup', '1234qwer', comment = 'петух')
