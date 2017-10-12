@@ -33,5 +33,5 @@ class ApiProxy:
       packet = sock.recv(n - len(data))
       if not packet:
         return data
-      data += packet
+      data += str(packet).decode('utf-8')
     return data

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2867ecbd-598e-4712-be06-43eb377e11d8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>metaPython.py</StartupFile>
+    <StartupFile>MetaSockets\TestCreateAccount.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,15 +21,47 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="actions\createAccount.py" />
-    <Compile Include="actions\modifyAccount.py" />
-    <Compile Include="actions\__init__.py" />
+    <Compile Include="apiiii.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="apiProxy.py" />
+    <Compile Include="apiTweepyLike.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game5map.py" />
+    <Compile Include="game3.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game4.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="metaPython.py" />
-    <Compile Include="strToDict.py"/>
+    <Compile Include="MetaSockets\ApiV1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetaSockets\ApiV2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetaSockets\TestCreateAccount.py" />
+    <Compile Include="MetaSockets\Common.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="requestBin.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="strToDict.py" />
+    <Compile Include="tweThreads.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="actions\" />
+    <Folder Include="MetaSockets\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

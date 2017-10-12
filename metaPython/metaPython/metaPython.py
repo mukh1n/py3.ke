@@ -1,37 +1,55 @@
-from apiProxy import *
-import actions.createAccount as createAccount
-import actions.modifyAccount as modifyAccount
+import strToDict
 
-def modifyAccountCall(action):
-  api = ApiProxy('127.0.0.1', 49410)
-  response = api.get(action.toString())
-  return modifyAccount.response(response)
+class Response:
+  def __init__(self, responseString):
+    dict = strToDict.getDict(responseString)
+    self.p = dict
+    self.result = dict.get("result")
+    self.error = dict.get("error")
+    self.login = dict.get("login")
+    self.size = dict.get("size")
+    self.request_id = dict.get("request_id")
 
-def createAccountCall(action):
-  api = ApiProxy('127.0.0.1', 49410)
-  response = api.get(action.toString())
-  return createAccount.response(response)
+class Command:
+  def __init__(self, name, params):
+    self.name = name
+    self.params = params
+  
+  def toString(self):
+    return 'action=' + self.name + '&'.join(['{0}={1}'.format(key, value) for (key, value) in self.params.items() if value is not None and key != 'self'])
 
-action1 = createAccount.action(1234, 'yobaGroup', 200)
-result1 = createAccountCall(action1)
+  def do(self):
+    api = ApiProxy()
+    result = api.send(self)
+    return Response(result)
 
-print('result1.result = {0}'.format(result1.result))
-print('result1.login = {0}'.format(result1.login))
-print('result1.error = {0}'.format(result1.error))
+class CommandBuilder:
+  def create_account(self, name, group, password
+          , login=None, agent=None, leverage=None, email=None, id=None, address=None, city=None, state=None
+          , zipcode=None, country=None, phone=None, password_phone=None, password_investor=None
+          , comment=None, enable=None, enable_change_password=None
+          , enable_read_only=None, send_reports=None, status=None):
+    return Command('createaccount', locals())
 
-action2 = createAccount.action.createDefault()
-result2 = createAccountCall(action2)
+  def modify_account(self, login, name2, group, password
+          , agent=None, leverage=None, email=None, id=None, address=None, city=None, state=None
+          , zipcode=None, country=None, phone=None, password_phone=None, password_investor=None
+          , comment=None, enable=None, enable_change_password=None
+          , enable_read_only=None, send_reports=None, status=None):
+    return Command('modifyaccount', locals())
 
-print('result2.result = {0}'.format(result2.result))
-print('result2.login = {0}'.format(result2.login))
-print('result2.error = {0}'.format(result2.error))
+class ApiProxy:
+  def send(self, command):
+    print('Кабудто шлём: [{0}] - {1}'.format(command.name, command.toString()))
+    return 'result=1&login=123&huyPizda=1488'
 
-action3 = modifyAccount.action.createDefault()
-result3 = modifyAccountCall(action3)
-
-print('result3.result = {0}'.format(result3.result))
-print('result3.login = {0}'.format(result3.login))
-print('result3.error = {0}'.format(result3.error))
-
-
-
+a = ApiProxy()
+b = CommandBuilder()
+result1 = b.create_account('123','444','2355', phone=1488).do()
+result2 = b.create_account('90000', '123','444','2355', phone=666).do()
+print(result1.request_id)
+print(result1.result)
+print(result1.p["huyPizda"])
+print(result2.request_id)
+print(result2.result)
+print(result2.p["huyPizda"])
