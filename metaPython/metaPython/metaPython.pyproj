@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2867ecbd-598e-4712-be06-43eb377e11d8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>metaPython.py</StartupFile>
+    <StartupFile>TestCreateAccount.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
