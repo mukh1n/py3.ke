@@ -1,12 +1,16 @@
 import socket
 
+class FakeApiProxy:
+  def get(self, command):
+    print('Fake sending: ' + command)
+    return 'result=1&login=123&huyPizda=1488'
+
 class ApiProxy:
   def __init__(self, host, port):
     self.host = host
     self.port = port
     
   def get(self, command):
-    #return 'login=351092&request_id=1&result=1&size=34'
     mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     mySocket.connect((self.host, self.port))
     num = mySocket.send(command)
