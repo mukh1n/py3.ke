@@ -3,7 +3,8 @@ import socket
 class FakeApiProxy:
   def get(self, command):
     print('Fake sending: ' + command)
-    return 'result=1&login=123&huyPizda=1488'
+    #return 'result=1&login=123&huyPizda=1488'
+    return '102;3871341;EURUSD;1.18427;1.18424;-3.00;100;1507913188;0;-781901231-177781462-1563176667;0.00;0.00;0;0.00000;0.00000;0.00'
 
 class ApiProxy:
   def __init__(self, host, port):

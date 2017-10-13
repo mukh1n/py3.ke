@@ -5,10 +5,10 @@ class ApiClient(object):
   def __init__(self, apiProxy):
     self.apiProxy = apiProxy
 
-  def do(self, method_name, params):
+  def do(self, method_name, params, headers=None):
     request = metapi.Request(method_name, params)
     result = self.apiProxy.get(request.string)
-    return metapi.Response(result)
+    return metapi.Response(result, headers)
 
   def createAccount(self, name, group, password, login=None, agent=None, leverage=None, email=None, id=None, address=None,
                    city=None, state=None, zipcode=None, country=None, phone=None, password_phone=None, password_investor=None, 
@@ -19,3 +19,6 @@ class ApiClient(object):
                 default_leverage=None, default_deposit=None, copies=None, reports=None, margin_call=None, margin_mode=None, margin_stopout=None,
                 news=None, interestrate=None, use_swap=None, hedge_prohibited=None, margin_type=None, enable=None, request_id=None,):
     return self.do('creategroup', locals())
+
+  def getOrder(self, order, request_id=None):
+    return self.do('getorder', locals(), 'login; order; symbol; open_price; close_price; profit; volume; open_time; close_time; comment; commission; agent; cmd; sl; tp; swap')

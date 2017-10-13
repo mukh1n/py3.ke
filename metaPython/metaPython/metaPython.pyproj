@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2867ecbd-598e-4712-be06-43eb377e11d8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>pygame\game6.py</StartupFile>
+    <StartupFile>metaPython.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
