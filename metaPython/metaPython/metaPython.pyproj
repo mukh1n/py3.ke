@@ -58,6 +58,9 @@
     <Compile Include="requestBin.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="metatesting.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tweThreads.py">
       <SubType>Code</SubType>
     </Compile>

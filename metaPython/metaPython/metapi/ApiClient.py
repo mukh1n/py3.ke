@@ -1,7 +1,7 @@
 import metapi
 
 class ApiClient(object):
-  """Api Client for Meta Trader 4 API"""
+  """Api Client for Meta Trader 5 API"""
   def __init__(self, apiProxy):
     self.apiProxy = apiProxy
 
@@ -15,7 +15,7 @@ class ApiClient(object):
                    comment=None, enable=None, enable_change_password=None, enable_read_only=None, send_reports=None, status=None):
     return self.do('createaccount', locals())
 
-  def creategroup(self, name, currency=None, company=None, smtp_server=None, smtp_login=None, smtp_password=None, smtp_email=None,
+  def createGroup(self, name, currency=None, company=None, smtp_server=None, smtp_login=None, smtp_password=None, smtp_email=None,
                 default_leverage=None, default_deposit=None, copies=None, reports=None, margin_call=None, margin_mode=None, margin_stopout=None,
                 news=None, interestrate=None, use_swap=None, hedge_prohibited=None, margin_type=None, enable=None, request_id=None,):
     return self.do('creategroup', locals())
