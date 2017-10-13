@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2867ecbd-598e-4712-be06-43eb377e11d8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>TestCreateAccount.py</StartupFile>
+    <StartupFile>pygame\game6.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -28,6 +28,7 @@
     <Compile Include="pygame\game2.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="pygame\game6.py" />
     <Compile Include="pygame\game5map.py" />
     <Compile Include="pygame\game3.py">
       <SubType>Code</SubType>
@@ -69,6 +70,12 @@
     <Folder Include="metapi2\" />
     <Folder Include="metapi\" />
     <Folder Include="pygame\" />
+    <Folder Include="pygame\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pygame\images\dick.png" />
+    <Content Include="pygame\images\dick_warm_body.png" />
+    <Content Include="pygame\images\dick_warm_head.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
