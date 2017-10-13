@@ -1,5 +1,5 @@
 class Request(object):
-  """description of class"""
+  """Request object that takes methon_name and params dictionary and builds command string."""
   def __init__(self, methon_name, params):
     self.methon_name = methon_name
     self.params = params

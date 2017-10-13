@@ -1,5 +1,5 @@
 class Response(object):
-  """description of class"""
+  """Response object that builts from form-data string"""
   def __init__(self, stringResult):
     self.__dict__ = self.parseFormData(stringResult)
     
@@ -15,5 +15,3 @@ class Response(object):
       value = keyValue[1]
       dictionary[key] = value
     return dictionary
-
-
