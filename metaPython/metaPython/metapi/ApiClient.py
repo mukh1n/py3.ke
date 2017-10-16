@@ -8,7 +8,10 @@ class ApiClient(object):
   def do(self, method_name, params, headers=None):
     request = metapi.Request(method_name, params)
     result = self.apiProxy.get(request.string)
-    return metapi.Response(result, headers)
+    if headers is None:
+      return metapi.Response.fromFormData(result)
+    else:
+      return metapi.Response.fromScsv(result, headers)
 
   def createAccount(self, name, group, password, login=None, agent=None, leverage=None, email=None, id=None, address=None,
                    city=None, state=None, zipcode=None, country=None, phone=None, password_phone=None, password_investor=None, 
@@ -22,3 +25,6 @@ class ApiClient(object):
 
   def getOrder(self, order, request_id=None):
     return self.do('getorder', locals(), 'login; order; symbol; open_price; close_price; profit; volume; open_time; close_time; comment; commission; agent; cmd; sl; tp; swap')
+
+  def getSymbol(self, request_id=None):
+    return self.do('getsymbol', locals(), 'symbol_name; digits; security; security_type; swapLong; swapShort; spread; bid; ask; tickSize; tickPrice; initial_margin; contract_size; point')
