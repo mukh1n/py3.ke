@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2867ecbd-598e-4712-be06-43eb377e11d8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>metaPython.py</StartupFile>
+    <StartupFile>lastFm.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="apiProxy.py" />
+    <Compile Include="lastFm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="longPolling.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pumping.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pygame\game.py">
       <SubType>Code</SubType>
     </Compile>
@@ -60,6 +69,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="metatesting.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tgBot.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tweThreads.py">
